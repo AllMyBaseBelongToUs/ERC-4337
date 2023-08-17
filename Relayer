@@ -1,0 +1,9 @@
+// Receive the signed transaction from the user
+const wrappedTx = {
+  to: entryPointContractAddress,
+  data: entryPointContractMethodData(signedTx),
+  // other transaction parameters
+};
+
+// Send the wrapped transaction to the Ethereum network
+await web3.eth.sendTransaction(wrappedTx);
