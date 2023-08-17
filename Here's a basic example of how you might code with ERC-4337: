@@ -1,0 +1,8 @@
+const tx = {
+  to: contractAddress,
+  data: contractMethodData,
+  // other transaction parameters
+};
+
+// Sign the transaction
+const signedTx = await userWallet.signTransaction(tx);
