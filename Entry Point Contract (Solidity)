@@ -1,0 +1,13 @@
+contract EntryPoint {
+    function execute(signedTx) external {
+        // Verify the user's signature
+        address user = recoverSigner(signedTx);
+
+        // Execute the user's transaction
+        (bool success,) = signedTx.to.call(signedTx.data);
+        require(success, "Transaction failed");
+
+        // Deduct gas fee in the token of choice from the user
+        // Reimburse the relayer in ETH
+    }
+}
